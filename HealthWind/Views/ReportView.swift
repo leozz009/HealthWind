@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ReportView: View {
+    @State private var selectedSegment = 0 // Selecciona REPORTE / FORO
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack{
+                Picker("Selecciona una opción", selection: $selectedSegment) {
+                    Text("Reporte").tag(0)
+                    Text("Foro").tag(1)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+        }.padding(.horizontal)
     }
 }
 
