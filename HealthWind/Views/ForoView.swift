@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ForoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            PostViewComponent(profileImage: Image("profileImage"), name: "Arely Salinas", date: "10 Oct", description: "Hay reportes e contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud .", reportImage: Image("monterrey"))
+            
+            PostViewComponent(profileImage: Image("profileImage"), name: "Arely Salinas", date: "10 Oct", description: "Hay reportes e contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud .", reportImage: Image("monterrey"))
+            
+            PostViewComponent(profileImage: Image("profileImage"), name: "Arely Salinas", date: "10 Oct", description: "Hay reportes e contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud .", reportImage: Image("monterrey"))
+            
+        }.scrollIndicators(.hidden)
     }
 }
 

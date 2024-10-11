@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab = 0
     var body: some View {
-        @State var selectedTab = 0
+        
 
         TabView (selection: $selectedTab){
             MenuView()
@@ -25,21 +26,25 @@ struct ContentView: View {
                 Text("Mapa")
             }.tag(1)
             
-            NavigationView {  // Agregar NavigationView solo en ReportView
+            NavigationView {
                 ReportView()
-                    .navigationTitle("Reporte")  // Título nativo
+                    .navigationTitle("Reporte & Foro")
             }
             .tabItem {
                 Image(systemName: "camera")
                 Text("Reporte")
             }.tag(2)
             
-            HealthView().tabItem {
+            NavigationView{
+                HealthView()
+                    .navigationTitle("Mi salud")
+            }
+                .tabItem {
                 Image(systemName: "heart")
                 Text("Salud")
             }.tag(3)
             
-            HealthView().tabItem {
+            ProfileView().tabItem {
                 Image(systemName: "person.fill")
                 Text("Perfil")
             }.tag(4)

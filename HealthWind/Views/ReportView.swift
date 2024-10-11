@@ -17,6 +17,16 @@ struct ReportView: View {
                     Text("Foro").tag(1)
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                
+                if(selectedSegment == 0){
+                    PhotoView()
+                        .padding(.top,15)
+                }
+                else {
+                    ForoView()
+                        .padding(.top,15)
+                    
+                }
             }
         }.padding(.horizontal)
     }

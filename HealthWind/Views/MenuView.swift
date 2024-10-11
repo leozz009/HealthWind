@@ -28,10 +28,8 @@ struct MenuView: View {
                 
                 // Imagen de la nube y texto descriptivo
                 VStack{
-                    Image("cloudy")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200)
+                    Text("🌥️")
+                        .font(.system(size: 125))
                     VStack {
                         Text("Parcialmente Nublado")
                             .font(.title2)
@@ -41,8 +39,8 @@ struct MenuView: View {
                         Text("Domingo, 6 de octubre del 2024")
                             .font(.title3)
                             .foregroundColor(.gray)
-                    }.offset(y:-40)
-                }
+                    }.padding(.bottom,10)
+                }.padding().offset(y:-20)
                 
                 // Ubicación, Calidad del aire y contaminantes
                 VStack {
