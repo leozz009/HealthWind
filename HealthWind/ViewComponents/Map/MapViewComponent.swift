@@ -12,7 +12,7 @@ struct MapViewComponent: View {
     @State private var position = MapCameraPosition.automatic
     @Binding var searchResults: [SearchResult]
     @State private var selectedLocation: SearchResult?
-    @State private var scene: MKLookAroundScene?
+
     @Binding var viewModel:MapViewModel
 
         var body: some View {

@@ -85,7 +85,7 @@ struct MenuView: View {
                         Spacer()
                     }.padding(.bottom,10)
                     ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 12) {
+                                HStack(spacing: 16) {
                                     ForecastCardViewComponent(indice: 34, day: "Lun")
                                     ForecastCardViewComponent(indice: 90, day: "Mar")
                                     ForecastCardViewComponent(indice: 102, day: "Mie")
