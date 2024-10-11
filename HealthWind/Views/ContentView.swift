@@ -28,21 +28,25 @@ struct ContentView: View {
                 
             }.tag(1)
             
-            NavigationView {  // Agregar NavigationView solo en ReportView
+            NavigationView {
                 ReportView()
-                    .navigationTitle("Reporte")  // Título nativo
+                    .navigationTitle("Reporte & Foro")
             }
             .tabItem {
                 Image(systemName: "camera")
                 Text("Reporte")
             }.tag(2)
             
-            HealthView().tabItem {
+            NavigationView{
+                HealthView()
+                    .navigationTitle("Mi salud")
+            }
+                .tabItem {
                 Image(systemName: "heart")
                 Text("Salud")
             }.tag(3)
             
-            HealthView().tabItem {
+            ProfileView().tabItem {
                 Image(systemName: "person.fill")
                 Text("Perfil")
             }.tag(4)

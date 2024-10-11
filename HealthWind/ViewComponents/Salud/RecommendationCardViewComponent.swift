@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct RecommendationCardViewComponent: View {
+    var icon : String
+    var recommendation: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment: .center) {
+            Image(systemName: icon)
+                .resizable()
+                .frame(width: 40, height: 40)
+                .foregroundColor(Color.blueApp)
+                .padding(.horizontal,8)
+            
+            Text(recommendation)
+                .font(.body)
+                .padding()
+                .background(Color.grayComponent)
+                .cornerRadius(10)
+                .shadow(radius: 2)
+        }.padding(.bottom,15)
     }
 }
 
 #Preview {
-    RecommendationCardViewComponent()
+    RecommendationCardViewComponent(icon: "car.fill", recommendation: "El día de hoy disminuye el uso del automóvil y opta por actividades como andar en bicicleta o caminar.")
 }

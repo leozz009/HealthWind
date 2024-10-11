@@ -12,7 +12,8 @@ struct PhotoView: View {
         VStack{
             VStack(alignment: .center){
                 Text("¿Qué estás observando?")
-                    .font(.title2)
+                    .font(.title)
+                    .padding(.bottom,10)
                 Text("Toma una foto para generar un reporte de la contaminación actual en la zona en la que estás")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.secondary)
@@ -31,7 +32,15 @@ struct PhotoView: View {
                         .frame(width: 40)
                         .font(.system(size: 10, weight: .bold))
                 }.foregroundColor(.secondary)
-            }.padding(.top, 50)
+            }.padding(.top, 80)
+            
+            VStack {
+                Button("Ver detalle actual"){
+                    
+                }.buttonStyle(.borderedProminent)
+                    .tint(.blueApp)
+            }.padding(.top,80)
+            Spacer()
         }
     }
 }
