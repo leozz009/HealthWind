@@ -12,16 +12,24 @@ struct ForecastCardViewComponent: View {
     var day: String;
     var body: some View {
         VStack {
-            Text("\(indice)")
-                .font(.title)
-                .foregroundColor(getColorByIndex(indice))
-                .padding(.all,28)
-                .background(.grayComponent)
-                .cornerRadius(12)
-                .shadow(color:getColorByIndex(indice),radius: 4)
+            VStack {
+                Text("\(indice)")
+                    .font(.system(size:200))
+                    .minimumScaleFactor(0.01)
+
+                    .foregroundColor(getColorByIndex(indice))
+                
+            }
+            .frame(width: 50, height: 56)
+            .padding(.all,8)
+            .background(.grayComponent)
+            .cornerRadius(12)
+            .shadow(color:getColorByIndex(indice),radius: 4)
+            
             Text(day)
                 .foregroundColor(.secondary)
         }
+        
     }
 }
 
@@ -44,5 +52,5 @@ func getColorByIndex(_ indice: Int) -> Color {
 }
 
 #Preview {
-    ForecastCardViewComponent(indice: 160, day: "Lun")
+    ForecastCardViewComponent(indice: 150, day: "Lun")
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct SheetView: View {
+struct MapSheetView: View {
 
 
     var body: some View {

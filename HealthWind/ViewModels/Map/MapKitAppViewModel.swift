@@ -8,7 +8,7 @@ import MapKit
 import Combine
 
 @Observable
-class ViewModel: NSObject, MKLocalSearchCompleterDelegate {
+class MapViewModel: NSObject, MKLocalSearchCompleterDelegate {
     var singleSelection: Bool = false
     private let completer: MKLocalSearchCompleter
     private var searchTask: Task<Void, Never>?
