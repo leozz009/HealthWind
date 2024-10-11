@@ -3,12 +3,13 @@
 //  HealthWind
 //
 //  Created by Leonardo González on 09/10/24.
+// Hola
 //  TabView para saleccionar las diferentes vistas.
 
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab = 0
+    @State var selectedTab:Int = 0
     var body: some View {
         
 
@@ -21,9 +22,10 @@ struct ContentView: View {
                 
             }.tag(0)
             
-            MapView().tabItem {
+            MapView(selectedTab:$selectedTab).tabItem {
                 Image(systemName: "map")
                 Text("Mapa")
+                
             }.tag(1)
             
             NavigationView {
