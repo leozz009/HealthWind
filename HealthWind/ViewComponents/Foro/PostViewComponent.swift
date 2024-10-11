@@ -75,7 +75,6 @@ struct PostViewComponent: View {
                 }
             }.padding(.top,3)
                 .padding(.bottom,5)
-            Divider()
         }.padding(.top,10)
     }
 }
