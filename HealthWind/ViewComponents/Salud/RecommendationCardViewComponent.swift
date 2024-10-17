@@ -16,7 +16,7 @@ struct RecommendationCardViewComponent: View {
             Image(systemName: icon)
                 .resizable()
                 .frame(width: 40, height: 40)
-                .foregroundColor(Color.blueApp)
+                .foregroundColor(Color.icons)
                 .padding(.horizontal,8)
             
             Text(recommendation)
