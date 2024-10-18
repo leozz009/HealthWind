@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct LoginView: View {
@@ -135,5 +136,5 @@ func iniciarSesion(email: String, password: String, completion: @escaping (Strin
 }
 
 #Preview {
-    LoginView(selectedTab: .constant(0))  
+    LoginView(selectedTab: .constant(0))
 }
