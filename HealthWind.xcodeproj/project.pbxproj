@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1814907B2CC2C646001CF684 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1814907A2CC2C646001CF684 /* OpenAI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A75227FA2CB72DCB00785B13 /* HealthWind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1814907B2CC2C646001CF684 /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = HealthWind;
 			packageProductDependencies = (
+				1814907A2CC2C646001CF684 /* OpenAI */,
 			);
 			productName = HealthWind;
 			productReference = A75227FA2CB72DCB00785B13 /* HealthWind.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = A75227F12CB72DCB00785B13;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A75227FB2CB72DCB00785B13 /* Products */;
 			projectDirPath = "";
@@ -322,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1814907A2CC2C646001CF684 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A75227F22CB72DCB00785B13 /* Project object */;
 }
