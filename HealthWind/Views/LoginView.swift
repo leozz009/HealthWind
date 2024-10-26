@@ -97,7 +97,7 @@ struct LoginView: View {
 
 // Función para iniciar sesión con el servidor
 func iniciarSesion(email: String, password: String, completion: @escaping (String) -> Void) {
-    guard let url = URL(string: "http://192.168.7.221:3000/login") else {
+    guard let url = URL(string: "https://healthwindapi.vercel.app/login") else {
         completion("URL inválida")
         return
     }
@@ -108,7 +108,7 @@ func iniciarSesion(email: String, password: String, completion: @escaping (Strin
 
     let parametros: [String: Any] = [
         "correo": email,
-        "contraseña": password
+        "contrasenia": password
     ]
 
     do {

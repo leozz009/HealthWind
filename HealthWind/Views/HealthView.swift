@@ -40,7 +40,10 @@ struct HealthView: View {
                 
             }.padding(.horizontal)
         }.task{
-            await viewModel.getChatReply()
+            if(!viewModel.loadedRecommendationes){
+                await viewModel.getChatReply()
+            }
+            
         }
     }
 }
