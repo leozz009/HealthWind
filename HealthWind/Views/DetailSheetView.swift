@@ -8,46 +8,62 @@
 import SwiftUI
 
 struct DetailSheetView: View {
+    @Environment(\.dismiss) var dismiss // Permite cerrar la vista
+
     var body: some View {
-        VStack{
+        VStack {
+            // Botón de cerrar en la parte superior
+            HStack {
+                Spacer()
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .foregroundColor(.gray)
+                }
+            }.frame(maxWidth: .infinity, alignment: .trailing)
+
             // Header detalle actual
             VStack {
                 HStack{
                     Text("Detalle Actual")
-                        .font(.title)
+                        .font(.title2)
                     Spacer()
                 }
                 HStack{
                     Text("¿Cómo se encuentra la situación hoy?")
                         .foregroundColor(.secondary)
                     Spacer()
-                }.padding(.bottom,40)
-            }.padding(.horizontal)
-          
-        
+                }
+                .padding(.bottom, 40)
+            }
+            .padding(.horizontal)
+
             // Calidad del aire
-            VStack{
+            VStack {
                 Text("Calidad del aire")
                     .foregroundColor(.secondary)
                     .fontWeight(.light)
                 Text("Buena") // ESTE VALOR DEBE PASARSE COMO PARAMETRO
-                    .font(.system(size: 70))
+                    .font(.system(size: 60))
                     .foregroundColor(.greenIndex)
-            }.padding(.bottom,40)
-            
+            }
+            .padding(.bottom, 40)
+
             VStack {
-                HStack{
+                HStack {
                     Text("Principal Contaminante")
-                        .font(.title2)
+                        .font(.title3)
                     Spacer()
                 }
-                HStack{
+                HStack {
                     Text("Ozono (O3)")
                         .foregroundColor(.secondary)
                     Spacer()
                 }
-            }.padding(.horizontal)
-            
+            }
+            .padding(.horizontal)
+
             NavigationView {
                 List {
                     Section {
@@ -55,7 +71,7 @@ struct DetailSheetView: View {
                             .font(.body)
                             .cornerRadius(8)
                     }
-                    
+
                     Section(header: Text("Otros contaminantes").font(.headline)) {
                         ForEach(0..<3) { index in
                             HStack {
@@ -71,12 +87,14 @@ struct DetailSheetView: View {
                 }
                 .listStyle(.plain)
             }
-            
+
             Spacer()
-        }.padding(.top, 50)
-            .padding(.horizontal)
+        }
+        .padding(.top, 50)
+        .padding(.horizontal)
     }
 }
+
 
 #Preview {
     DetailSheetView()
