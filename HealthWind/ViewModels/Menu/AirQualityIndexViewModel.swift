@@ -11,7 +11,7 @@ class AirQualityIndexViewModel: ObservableObject{
     
     @Published var airQualityData: AirQualityResponse?
     
-    let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?"
+    let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     
     func fetchAirQualityIndex(latitude: Double, longitude: Double) {
         // Configura los parámetros

@@ -11,16 +11,38 @@ import SwiftUI
 public struct MapSheet: View {
     @Binding var location: LocationModel
     public var body: some View {
-        Text(location.name)
-            .font(.largeTitle)
-        Image(uiImage: location.image)
-            .resizable()
-            .frame(width: 100, height: 100)
-            .scaledToFill()
+
+        
+        if(location.name != "") {
+            HStack {
+                ZStack {
+                    Circle()
+                        .frame(width: 160, height: 160)
+                        .foregroundColor(location.AQI.color.swiftUIColor)
+                    
+                    Image(uiImage: location.image)
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                        .scaledToFill()
+                        .clipShape(Circle())
+                }
+                VStack {
+                    Text("Calidad del aire")
+                        .foregroundColor(.secondary)
+                    Text(getLastWordWithCapitalization(text: location.AQI.category))
+                        .font(.system(size:30))
+                        .foregroundStyle(location.AQI.color.swiftUIColor)
+                    
+                    
+                }
+                
+            }
+        }
             
             
     }
 }
+
 
 #Preview {
     ContentView(selectedTab: 1)

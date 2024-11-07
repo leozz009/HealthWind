@@ -24,6 +24,7 @@ struct LocationModel: Identifiable{
     let name: String
     let coordinate: CLLocationCoordinate2D
     let image: UIImage
+    let AQI: AQIIndex
 }
 
 struct Photo: Codable {

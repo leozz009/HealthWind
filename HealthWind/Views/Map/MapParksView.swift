@@ -23,7 +23,7 @@ struct MapParksView: View {
                         ZStack{
                             
                             Circle()
-                                .fill(.green)
+                                .fill(places.AQI.color.swiftUIColor)
                                 .opacity(0.2)
                                 .frame(width: 38, height: 38)
                             
@@ -36,7 +36,7 @@ struct MapParksView: View {
                                 .foregroundStyle(.white)
                                 .padding(EdgeInsets(top: 6, leading: 6, bottom: 6, trailing: 6))
                                 .frame(width: 25, height: 25)
-                                .background(.green)
+                                .background(places.AQI.color.swiftUIColor)
                                 .clipShape(.circle)
                             
                         }.onTapGesture {
