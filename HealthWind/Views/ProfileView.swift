@@ -16,7 +16,7 @@ struct ProfileView: View {
                 
                 // Imagen de perfil y nombre
                 VStack{
-                    ProfileCircleImageViewComponent(profileImage: Image("profileImage"), systemImage: "pencil.circle.fill", borderColor: Color.blueApp)
+                    ProfileCircleImageViewComponent(profileImage: Image("profileImage"), systemImage: "pencil.circle.fill", borderColor:.blueApp) // Cambio aqui 
                     Text("Arely Salinas")
                         .font(.largeTitle)
                         .fontWeight(.semibold)

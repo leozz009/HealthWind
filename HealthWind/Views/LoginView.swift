@@ -66,6 +66,7 @@ struct LoginView: View {
                     }) {
                         Text("Iniciar Sesión")
                             .bold()
+                            .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.blueApp)
                             .foregroundColor(.white)
@@ -81,8 +82,13 @@ struct LoginView: View {
 
                     NavigationLink(destination: SignupView()) {  // Enlace para navegar a la vista de Signup
                         Text("Crear cuenta")
-                            .foregroundColor(.blue)
-                            .padding(.top, 10)
+                            .bold()
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.blueSecundaryApp)
+                            .cornerRadius(8)
+                            .padding(.top,8)
                     }
 
                     Spacer()
