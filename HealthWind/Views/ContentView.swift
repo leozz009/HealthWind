@@ -3,7 +3,6 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedTab: Int = 0
     @StateObject var authViewModel = AuthViewModel()  // Manejo del estado global de autenticación
-    @State var HealthViewModel: HealthViewModel = .init()
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -35,7 +34,7 @@ struct ContentView: View {
             if authViewModel.isAuthenticated || authViewModel.hasLoggedInBefore {
                 // Vistas protegidas
                 NavigationView {
-                    HealthView(viewModel: $HealthViewModel)
+                    HealthView()
                         .navigationTitle("Mi salud")
                 }
                 .tabItem {

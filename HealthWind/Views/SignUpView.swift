@@ -92,7 +92,7 @@ struct SignupView: View {
 }
 
 func signUpUser(nombre: String, foto_perfil: String, correo: String, contraseña: String, completion: @escaping (String) -> Void) {
-    guard let url = URL(string: "http://192.168.7.221:3000/signup") else {
+    guard let url = URL(string: "http://10.22.234.107:3000/signup") else {
         completion("URL inválida")
         return
     }

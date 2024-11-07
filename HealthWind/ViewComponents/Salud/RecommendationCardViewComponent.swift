@@ -20,19 +20,15 @@ struct RecommendationCardViewComponent: View {
                 .padding(.horizontal,8)
             
             Text(recommendation)
-                .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.body)
                 .padding()
                 .background(Color.grayComponent)
                 .cornerRadius(10)
                 .shadow(radius: 2)
-                
-                
         }.padding(.bottom,15)
-            .padding(.trailing,8)
     }
 }
 
 #Preview {
-    RecommendationCardViewComponent(icon: "car.fill", recommendation: "El día de hoy dismin")
+    RecommendationCardViewComponent(icon: "car.fill", recommendation: "El día de hoy disminuye el uso del automóvil y opta por actividades como andar en bicicleta o caminar.")
 }

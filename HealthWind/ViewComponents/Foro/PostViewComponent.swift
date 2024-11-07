@@ -1,29 +1,21 @@
-//
-//  PostViewComponent.swift
-//  HealthWind
-//
-//  Created by Leonardo González on 10/10/24.
-//
-
 import SwiftUI
 
 struct PostViewComponent: View {
-    // Variables que entran como parametro en el componente
+    // Variables que entran como parámetro en el componente
     var profileImage: Image
     var name: String
     var date: String
     var description: String
-    var reportImage: Image
-
+    var reportImageURL: String? // Ahora recibimos la URL de la imagen en lugar de un objeto Image
     
-    // Variables necesarias para que los simbolos se mantengan presionados
+    // Variables necesarias para que los símbolos se mantengan presionados
     @State private var isLiked = false
     @State private var isShared = false
     @State private var isCommented = false
     
     var body: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 profileImage
                     .resizable()
                     .scaledToFill()
@@ -39,16 +31,35 @@ struct PostViewComponent: View {
                     .fontWeight(.light)
             }.padding(.bottom, 8)
             
-            VStack{
+            VStack {
                 Text(description).foregroundColor(.secondary)
-                reportImage
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(12)
+                
+                // AsyncImage para cargar la imagen desde una URL
+                if let reportImageURL = reportImageURL, let url = URL(string: reportImageURL) {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(12)
+                    } placeholder: {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(12)
+                            .frame(height: 200)
+                            .foregroundColor(.gray)
+                    }
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(12)
+                        .frame(height: 200)
+                        .foregroundColor(.gray)
+                }
             }
-                        
+            
             HStack {
-
                 Button(action: {
                     isLiked.toggle()
                 }) {
@@ -73,13 +84,19 @@ struct PostViewComponent: View {
                         .foregroundColor(isShared ? .blue : .gray)
                         .font(.system(size: 20))
                 }
-            }.padding(.top,3)
-                .padding(.bottom,5)
-        }.padding(.top,10)
+            }.padding(.top, 3)
+             .padding(.bottom, 5)
+        }
+        .padding(.top, 10)
     }
 }
 
 #Preview {
-    PostViewComponent(profileImage: Image("profileImage"), name: "Aracely Salinas", date: "10 Oct", description: "Hay reportes e contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud .", reportImage: Image("monterrey"))
-    
+    PostViewComponent(
+        profileImage: Image("profileImage"),
+        name: "Aracely Salinas",
+        date: "10 Oct",
+        description: "Hay reportes de contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud.",
+        reportImageURL: "https://ejemplo.com/imagen.jpg"
+    )
 }
