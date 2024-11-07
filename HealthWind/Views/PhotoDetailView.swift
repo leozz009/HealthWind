@@ -56,7 +56,7 @@ struct PhotoDetailView: View {
     }
     
     func createPost(description: String, selectedImage: UIImage?, completion: @escaping () -> Void) {
-        let usuarioID = 2 // ID del usuario es 2
+        let usuarioID = 2 
         guard let url = URL(string: "http://10.22.233.131:3000/posts") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -66,17 +66,17 @@ struct PhotoDetailView: View {
         
         var body = Data()
         
-        // Agregar el ID del usuario
+     
         body.append(Data("--\(boundary)\r\n".utf8))
         body.append(Data("Content-Disposition: form-data; name=\"usuario_id\"\r\n\r\n".utf8))
         body.append(Data("\(usuarioID)\r\n".utf8))
         
-        // Agregar la descripción
+      
         body.append(Data("--\(boundary)\r\n".utf8))
         body.append(Data("Content-Disposition: form-data; name=\"descripcion\"\r\n\r\n".utf8))
         body.append(Data("\(description)\r\n".utf8))
         
-        // Agregar la imagen si existe
+        
         if let selectedImage = selectedImage, let imageData = selectedImage.jpegData(compressionQuality: 0.8) {
             let filename = "image.jpg"
             body.append(Data("--\(boundary)\r\n".utf8))
@@ -88,7 +88,7 @@ struct PhotoDetailView: View {
             print("No se seleccionó ninguna imagen")
         }
         
-        // Terminar el cuerpo de la solicitud
+    
         body.append(Data("--\(boundary)--\r\n".utf8))
         
         request.httpBody = body
@@ -99,7 +99,7 @@ struct PhotoDetailView: View {
                 return
             }
             
-            // Perform UI updates on the main thread
+            
             DispatchQueue.main.async {
                 if let data = data, let response = try? JSONSerialization.jsonObject(with: data, options: []) {
                     print("Post creado exitosamente: \(response)")

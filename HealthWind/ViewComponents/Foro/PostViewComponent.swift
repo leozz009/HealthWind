@@ -34,28 +34,16 @@ struct PostViewComponent: View {
             VStack {
                 Text(description).foregroundColor(.secondary)
                 
-                // AsyncImage para cargar la imagen desde una URL
-                if let reportImageURL = reportImageURL, let url = URL(string: reportImageURL) {
+                // AsyncImage para cargar la imagen desde una URL solo si reportImageURL es válido
+                if let reportImageURL = reportImageURL, !reportImageURL.isEmpty, let url = URL(string: reportImageURL) {
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
                             .scaledToFit()
                             .cornerRadius(12)
                     } placeholder: {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .frame(height: 200)
-                            .foregroundColor(.gray)
+                        ProgressView() // Puedes mostrar un indicador de carga en lugar de un marcador de posición si lo prefieres
                     }
-                } else {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(12)
-                        .frame(height: 200)
-                        .foregroundColor(.gray)
                 }
             }
             
@@ -97,6 +85,6 @@ struct PostViewComponent: View {
         name: "Aracely Salinas",
         date: "10 Oct",
         description: "Hay reportes de contaminación en la zona urbana de Monterrey. Se recomienda no salir para evitar riesgos en la salud.",
-        reportImageURL: "https://ejemplo.com/imagen.jpg"
+        reportImageURL: nil // Cambia este valor para probar el comportamiento sin imagen
     )
 }

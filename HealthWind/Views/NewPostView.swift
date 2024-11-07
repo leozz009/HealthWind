@@ -3,15 +3,15 @@ import PhotosUI
 
 struct NewPostView: View {
     @Binding var isPresented: Bool
+    var refreshPosts: () -> Void // Nueva función para refrescar los posts
     @State private var postText: String = ""
     @State private var selectedImage: UIImage? = nil
     @State private var imageSelection: PhotosPickerItem? = nil
-    @State private var isPosting: Bool = false // Estado para deshabilitar el botón mientras se publica
+    @State private var isPosting: Bool = false
 
     var body: some View {
         NavigationView {
             VStack {
-                // Área de texto para el post
                 TextEditor(text: $postText)
                     .frame(height: 100)
                     .padding()
@@ -19,7 +19,6 @@ struct NewPostView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                 
-                // Picker para la imagen
                 if let selectedImage = selectedImage {
                     Image(uiImage: selectedImage)
                         .resizable()
@@ -45,17 +44,16 @@ struct NewPostView: View {
                             }
                         }
                     }
-
                 }
                 
                 Spacer()
 
-                // Botón para publicar
                 Button(action: {
                     isPosting = true
                     createPost(description: postText, selectedImage: selectedImage) {
                         isPosting = false
                         isPresented = false
+                        refreshPosts() // Llama a refreshPosts para actualizar los posts
                     }
                 }) {
                     Text(isPosting ? "Publicando..." : "Publicar")
@@ -68,8 +66,6 @@ struct NewPostView: View {
                         .padding(.horizontal)
                 }
                 .disabled(isPosting || postText.isEmpty)
-
-
             }
             .navigationTitle("Nuevo Post")
             .navigationBarItems(leading: Button(action: {
@@ -81,7 +77,7 @@ struct NewPostView: View {
     }
 
     func createPost(description: String, selectedImage: UIImage?, completion: @escaping () -> Void) {
-        let usuarioID = 2 // ID del usuario es 2
+        let usuarioID = 2
         guard let url = URL(string: "http://10.22.233.131:3000/posts") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -90,18 +86,14 @@ struct NewPostView: View {
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         var body = Data()
-
-        // Agregar el ID del usuario
         body.append(Data("--\(boundary)\r\n".utf8))
         body.append(Data("Content-Disposition: form-data; name=\"usuario_id\"\r\n\r\n".utf8))
         body.append(Data("\(usuarioID)\r\n".utf8))
 
-        // Agregar la descripción
         body.append(Data("--\(boundary)\r\n".utf8))
         body.append(Data("Content-Disposition: form-data; name=\"descripcion\"\r\n\r\n".utf8))
         body.append(Data("\(description)\r\n".utf8))
 
-        // Agregar la imagen si existe
         if let selectedImage = selectedImage, let imageData = selectedImage.jpegData(compressionQuality: 0.8) {
             let filename = "image.jpg"
             body.append(Data("--\(boundary)\r\n".utf8))
@@ -113,7 +105,6 @@ struct NewPostView: View {
             print("No se seleccionó ninguna imagen")
         }
 
-        // Terminar el cuerpo de la solicitud
         body.append(Data("--\(boundary)--\r\n".utf8))
 
         request.httpBody = body
@@ -129,10 +120,8 @@ struct NewPostView: View {
             }
         }.resume()
     }
-
-
 }
 
 #Preview {
-    NewPostView(isPresented: .constant(true))
+    NewPostView(isPresented: .constant(true), refreshPosts: {})
 }
