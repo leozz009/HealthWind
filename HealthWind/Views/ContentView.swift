@@ -4,6 +4,7 @@ struct ContentView: View {
     @State var selectedTab: Int = 0
     @StateObject var authViewModel = AuthViewModel()  // Manejo del estado global de autenticación
     @State var HealthViewModel: HealthViewModel = .init()
+    @State var locationViewModel: LocationViewModel = .init()
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -15,7 +16,7 @@ struct ContentView: View {
                 }
                 .tag(0)
 
-            MapView(selectedTab: $selectedTab)
+            MapView(locationViewModel: $locationViewModel)
                 .tabItem {
                     Image(systemName: "map")
                     Text("Mapa")
@@ -46,7 +47,6 @@ struct ContentView: View {
 
                 NavigationView {
                     ProfileView()
-                        .navigationTitle("Perfil")
                 }
                 .tabItem {
                     Image(systemName: "person.fill")
@@ -69,6 +69,9 @@ struct ContentView: View {
                     }
                     .tag(4)
             }
+        }
+        .onAppear {
+            locationViewModel.requestLocation()
         }
         .environmentObject(authViewModel)  // Inyecta el AuthViewModel en todas las vistas
     }

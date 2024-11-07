@@ -9,7 +9,19 @@ import Foundation
 import SwiftUI
 
 public struct MapSheet: View {
+    @Binding var location: LocationModel
     public var body: some View {
-        Text("Hello, World!")
+        Text(location.name)
+            .font(.largeTitle)
+        Image(uiImage: location.image)
+            .resizable()
+            .frame(width: 100, height: 100)
+            .scaledToFill()
+            
+            
     }
+}
+
+#Preview {
+    ContentView(selectedTab: 1)
 }
