@@ -1,10 +1,19 @@
 {
-  "originHash" : "0f6fa789e3ccd649ba0dc0bf0e62d112b1bbe417fa1c42d661c1038d7c38a0a3",
+  "originHash" : "bdc76499cb516822ea80b2e7252fc29004ae365cd65105cc8d06f9db13db96ab",
   "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "e16d3481f5ed35f0472cb93350085853d754913f",
+        "version" : "5.10.1"
+      }
+    },
     {
       "identity" : "openai",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "location" : "https://github.com/MacPaw/OpenAI",
       "state" : {
         "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
         "version" : "0.3.0"
