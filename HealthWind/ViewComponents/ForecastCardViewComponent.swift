@@ -10,6 +10,8 @@ import SwiftUI
 struct ForecastCardViewComponent: View {
     var indice: Int;
     var day: String;
+    var color: Color;
+    
     var body: some View {
         VStack {
             VStack {
@@ -17,14 +19,14 @@ struct ForecastCardViewComponent: View {
                     .font(.system(size:200))
                     .minimumScaleFactor(0.01)
 
-                    .foregroundColor(getColorByIndex(indice))
+                    .foregroundColor(color)
                 
             }
-            .frame(width: 50, height: 56)
+            .frame(width: 60, height: 60)
             .padding(.all,8)
             .background(.grayComponent)
             .cornerRadius(12)
-            .shadow(color:getColorByIndex(indice),radius: 4)
+            .shadow(color:color,radius: 4)
             
             Text(day)
                 .foregroundColor(.secondary)
@@ -33,24 +35,6 @@ struct ForecastCardViewComponent: View {
     }
 }
 
-// Funcion que verifica el indice y selecciona el color (HAY QUE PONER LOS COLORES ADECUADOS)
-func getColorByIndex(_ indice: Int) -> Color {
-    switch indice {
-    case 0...50:
-        return .green  // Buena calidad
-    case 51...100:
-        return .yellow  // Moderada
-    case 101...150:
-        return .orange  // Mala
-    case 151...200:
-        return .red     // Muy mala
-    case 201...300:
-        return .purple  // Peligrosa
-    default:
-        return .gray    // Desconocido
-    }
-}
-
 #Preview {
-    ForecastCardViewComponent(indice: 150, day: "Lun")
+    ForecastCardViewComponent(indice: 150, day: "Lun", color: .orange)
 }

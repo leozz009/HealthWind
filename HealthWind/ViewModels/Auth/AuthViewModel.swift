@@ -9,7 +9,7 @@ import SwiftUI
 
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated: Bool = true  // Estado de sesión
-    @Published var hasLoggedInBefore: Bool = false  // Para saber si ya inició sesión antes
+    @Published var hasLoggedInBefore: Bool = true // Para saber si ya inició sesión antes
     
     // Función de inicio de sesión
     func login() {

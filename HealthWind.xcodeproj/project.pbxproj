@@ -362,9 +362,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+		A76119542CD3373E00A34074 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.0;
@@ -389,9 +389,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1814907A2CC2C646001CF684 /* OpenAI */ = {
+		A76119552CD3373E00A34074 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			package = A76119542CD3373E00A34074 /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
 		};
 		181578AE2CDC10F000E720DB /* BottomSheet */ = {

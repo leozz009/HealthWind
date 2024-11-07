@@ -37,7 +37,7 @@ struct ContentView: View {
                 // Vistas protegidas
                 NavigationView {
                     HealthView(viewModel: $HealthViewModel)
-                        .navigationTitle("Mi salud")
+                        .navigationTitle("Sobre tu salud")
                 }
                 .tabItem {
                     Image(systemName: "heart")
@@ -70,6 +70,7 @@ struct ContentView: View {
                     .tag(4)
             }
         }
+        .environmentObject(authViewModel)
         .onAppear {
             locationViewModel.requestLocation()
         }
