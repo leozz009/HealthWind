@@ -11,7 +11,7 @@ import OpenAI
 
 @Observable
 class HealthViewModel: ObservableObject {
-    let openAI = OpenAI(apiToken: "")
+    let openAI = OpenAI(apiToken: "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")
     var result: String = ""
     var recommendations: [String] = []
     var loadedRecommendationes: Bool = false

@@ -1,13 +1,22 @@
 {
-  "originHash" : "0f6fa789e3ccd649ba0dc0bf0e62d112b1bbe417fa1c42d661c1038d7c38a0a3",
+  "originHash" : "f6380cc4ce384b6f670977bf571d82d695988dc7f1bc6ba0064167923c009e37",
   "pins" : [
     {
-      "identity" : "openai",
+      "identity" : "alamofire",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
-        "version" : "0.3.0"
+        "revision" : "e16d3481f5ed35f0472cb93350085853d754913f",
+        "version" : "5.10.1"
+      }
+    },
+    {
+      "identity" : "bottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lucaszischka/BottomSheet",
+      "state" : {
+        "revision" : "720ddbd1371fef2a09cc1ab65fc503df37767f9c",
+        "version" : "3.1.1"
       }
     }
   ],
