@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct LoginView: View {
@@ -97,7 +96,7 @@ struct LoginView: View {
 
 // Función para iniciar sesión con el servidor
 func iniciarSesion(email: String, password: String, completion: @escaping (String) -> Void) {
-    guard let url = URL(string: "http://192.168.7.221:3000/login") else {
+    guard let url = URL(string: "http://10.22.234.107:3000/login") else {
         completion("URL inválida")
         return
     }
@@ -136,5 +135,5 @@ func iniciarSesion(email: String, password: String, completion: @escaping (Strin
 }
 
 #Preview {
-    LoginView(selectedTab: .constant(0))
+    LoginView(selectedTab: .constant(0))  
 }

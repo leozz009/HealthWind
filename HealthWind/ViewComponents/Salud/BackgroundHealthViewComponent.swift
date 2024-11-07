@@ -10,7 +10,7 @@ import SwiftUI
 struct BackgroundHealthViewComponent: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.blueApp, Color.black]),
+            LinearGradient(gradient: Gradient(colors: [Color.blueApp, Color.grayComponent]),
                            startPoint: .bottom,
                            endPoint: UnitPoint(x: -0.1, y: 0.85))
             .frame(height: UIScreen.main.bounds.height)
