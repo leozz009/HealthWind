@@ -1,4 +1,12 @@
 //
+//  HealthView 2.swift
+//  HealthWind
+//
+//  Created by Rafael Alejandro Rivas González on 07/11/24.
+//
+
+
+//
 //  HealthView.swift
 //  HealthWind
 //
@@ -7,7 +15,10 @@
 
 import SwiftUI
 
+
 struct HealthView: View {
+    @Binding var viewModel: HealthViewModel
+    
     var body: some View {
         
         ZStack {
@@ -24,17 +35,29 @@ struct HealthView: View {
                         .padding(.horizontal, 15)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top,30)
+                if(!viewModel.loadedRecommendationes){
+                    Text("No hay recomendaciones disponibles")
+                }
+                else {
+                    VStack{
+                        ForEach(viewModel.recommendations, id: \.self){recommendation in
+                            RecommendationCardViewComponent(icon: "heart.circle.fill", recommendation: recommendation)
+                        }
+                    }.padding(.top,8)
+                }
                 
-                VStack{
-                    RecommendationCardViewComponent(icon: "heart.circle.fill", recommendation: "El día de hoy disminuye el uso del automóvil y opta por actividades como andar en bicicleta o caminar.")
-                    RecommendationCardViewComponent(icon: "car.circle.fill", recommendation: "El día de hoy disminuye el uso del automóvil y opta por actividades como andar en bicicleta o caminar.")
-                    RecommendationCardViewComponent(icon: "tree.circle", recommendation: "El día de hoy disminuye el uso del automóvil y opta por actividades como andar en bicicleta o caminar.")
-                }.padding(.top,8)
             }.padding(.horizontal)
+        }.task{
+            if(!viewModel.loadedRecommendationes){
+                await viewModel.getChatReply()
+            }
+            
         }
     }
 }
 
 #Preview {
-    HealthView()
+    HealthView(viewModel: .constant(HealthViewModel()))
 }
+
+
