@@ -10,7 +10,7 @@ import Alamofire
 class ForecastViewModel: ObservableObject {
     @Published var forecastDataList: [DailyForecast] = []
     
-   let url = ""
+    let url = "https://airquality.googleapis.com/v1/forecast:lookup?"
     
     func fetchAirQualityIndexForNextDays(latitude: Double, longitude: Double, daysCount: Int = 4) {
         let calendar = Calendar.current
