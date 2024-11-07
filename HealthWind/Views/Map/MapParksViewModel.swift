@@ -17,7 +17,7 @@ class MapParksViewModel: ObservableObject {
     @Published var reponse: String?
     
     func fetchAirQualityIndex(place: Place) {
-        let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
+        let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key="
         // Configura los parámetros
         let parameters: [String: Any] = [
             "location": [
@@ -58,7 +58,7 @@ class MapParksViewModel: ObservableObject {
         let url = "https://places.googleapis.com/v1/places:searchNearby"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "X-Goog-Api-Key": "AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48",
+            "X-Goog-Api-Key": "",
             "X-Goog-FieldMask" : "*"
         ]
 
@@ -93,7 +93,7 @@ class MapParksViewModel: ObservableObject {
     }
     
     func requestPhoto(name: String, place: Place, AQI: AQIIndex){
-        let url = "https://places.googleapis.com/v1/\(name)/media?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48&maxHeightPx=600&maxWidthPx=600"
+        let url = "https://places.googleapis.com/v1/\(name)/media?key=&maxHeightPx=600&maxWidthPx=600"
 
         AF.request(url).responseData { response in
             switch response.result {

@@ -25,8 +25,8 @@ public struct MapSheet: View {
                         .frame(width: 150, height: 150)
                         .scaledToFill()
                         .clipShape(Circle())
-                }
-                VStack {
+                }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                VStack(alignment: .leading) {
                     Text("Calidad del aire")
                         .foregroundColor(.secondary)
                     Text(getLastWordWithCapitalization(text: location.AQI.category))
@@ -35,7 +35,7 @@ public struct MapSheet: View {
                     
                     
                 }
-                
+               Spacer()
             }
         }
             
