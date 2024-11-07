@@ -1,5 +1,5 @@
 {
-  "originHash" : "bdc76499cb516822ea80b2e7252fc29004ae365cd65105cc8d06f9db13db96ab",
+  "originHash" : "1fc8e35e0641f0168a5e90255a82ce771ba5c8db5b2aa9cc74affb730b7d5def",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -11,12 +11,30 @@
       }
     },
     {
+      "identity" : "bottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lucaszischka/BottomSheet",
+      "state" : {
+        "revision" : "720ddbd1371fef2a09cc1ab65fc503df37767f9c",
+        "version" : "3.1.1"
+      }
+    },
+    {
       "identity" : "openai",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MacPaw/OpenAI",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
-        "version" : "0.3.0"
+        "revision" : "e16d3481f5ed35f0472cb93350085853d754913f",
+        "version" : "5.10.1"
+      }
+    },
+    {
+      "identity" : "bottomsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lucaszischka/BottomSheet",
+      "state" : {
+        "revision" : "720ddbd1371fef2a09cc1ab65fc503df37767f9c",
+        "version" : "3.1.1"
       }
     }
   ],

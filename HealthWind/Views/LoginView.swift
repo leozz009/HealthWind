@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct LoginView: View {
@@ -103,7 +102,7 @@ struct LoginView: View {
 
 // Función para iniciar sesión con el servidor
 func iniciarSesion(email: String, password: String, completion: @escaping (String) -> Void) {
-    guard let url = URL(string: "https://healthwindapi.vercel.app/login") else {
+    guard let url = URL(string: "http://10.22.234.107:3000/login") else {
         completion("URL inválida")
         return
     }
@@ -114,7 +113,7 @@ func iniciarSesion(email: String, password: String, completion: @escaping (Strin
 
     let parametros: [String: Any] = [
         "correo": email,
-        "contrasenia": password
+        "contraseña": password
     ]
 
     do {
@@ -142,5 +141,5 @@ func iniciarSesion(email: String, password: String, completion: @escaping (Strin
 }
 
 #Preview {
-    LoginView(selectedTab: .constant(0))
+    LoginView(selectedTab: .constant(0))  
 }
