@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1814907B2CC2C646001CF684 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1814907A2CC2C646001CF684 /* OpenAI */; };
+		A76119562CD3373E00A34074 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = A76119552CD3373E00A34074 /* OpenAI */; };
+		A7B295EB2CD5E18700EA2850 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A7B295EA2CD5E18700EA2850 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A75227FA2CB72DCB00785B13 /* HealthWind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A7EADF362CD475C800AF3327 /* Exceptions for "HealthWind" folder in "HealthWind" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A75227F92CB72DCB00785B13 /* HealthWind */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A75227FC2CB72DCB00785B13 /* HealthWind */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A7EADF362CD475C800AF3327 /* Exceptions for "HealthWind" folder in "HealthWind" target */,
+			);
 			path = HealthWind;
 			sourceTree = "<group>";
 		};
@@ -27,7 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1814907B2CC2C646001CF684 /* OpenAI in Frameworks */,
+				A76119562CD3373E00A34074 /* OpenAI in Frameworks */,
+				A7B295EB2CD5E18700EA2850 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +85,8 @@
 			);
 			name = HealthWind;
 			packageProductDependencies = (
-				1814907A2CC2C646001CF684 /* OpenAI */,
+				A76119552CD3373E00A34074 /* OpenAI */,
+				A7B295EA2CD5E18700EA2850 /* Alamofire */,
 			);
 			productName = HealthWind;
 			productReference = A75227FA2CB72DCB00785B13 /* HealthWind.app */;
@@ -101,7 +117,8 @@
 			mainGroup = A75227F12CB72DCB00785B13;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				A76119542CD3373E00A34074 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				A7B295E92CD5E18700EA2850 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A75227FB2CB72DCB00785B13 /* Products */;
@@ -263,6 +280,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para ofrecerle una experiencia óptima, esta aplicación necesita acceder a su ubicación actual.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -291,6 +311,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para ofrecerle una experiencia óptima, esta aplicación necesita acceder a su ubicación actual.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,21 +356,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+		A76119542CD3373E00A34074 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.0;
 			};
 		};
+		A7B295E92CD5E18700EA2850 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1814907A2CC2C646001CF684 /* OpenAI */ = {
+		A76119552CD3373E00A34074 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 181490792CC2C646001CF684 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			package = A76119542CD3373E00A34074 /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
+		};
+		A7B295EA2CD5E18700EA2850 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7B295E92CD5E18700EA2850 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
