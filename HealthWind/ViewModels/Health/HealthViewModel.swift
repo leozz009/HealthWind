@@ -11,13 +11,13 @@ import OpenAI
 
 @Observable
 class HealthViewModel: ObservableObject {
-    let openAI = OpenAI(apiToken: "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")
+    let openAI = OpenAI(apiToken: "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")
     var result: String = ""
     var recommendations: [String] = []
     var loadedRecommendationes: Bool = false
     
     func getChatReply() async {
-        let query = ChatQuery(messages: [.init(role: .user, content: "Give me in spanish three health recommendations for the user, knowing that she is a 27-year-old woman with a BMI of 24 and asthma. With an air quality index of 20, which is very good. Separated by only commas whitout spaces after commas, uppercase only the first letter of each recommendation, dont use any other separator, and only the recommendations.")!], model: .gpt4_o)
+        let query = ChatQuery(messages: [.init(role: .user, content: "Give me in spanish three health recommendations for the users day, knowing that she is a 27-year-old woman with a BMI of 24 and asthma. With an air quality index of 20, which is bad. Separated by only commas whitout spaces after commas, uppercase only the first letter of each recommendation, dont use any other separator, and only the recommendations.")!], model: .gpt4_o)
                 openAI.chats(query: query) { result in
                     switch result {
                     case .success(let success):
