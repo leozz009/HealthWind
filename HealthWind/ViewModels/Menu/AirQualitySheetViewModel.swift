@@ -11,7 +11,7 @@ import Alamofire
 class AirQualitySheetViewModel: ObservableObject {
     @Published var airQualityCompleteInformation: AirQualityData?
     
-    let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key="
+    let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     
     func fetchAirQualityData(latitude: Double, longitude: Double) {
         
