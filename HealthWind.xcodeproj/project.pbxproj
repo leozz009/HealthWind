@@ -286,9 +286,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
+				DEVELOPMENT_TEAM = JS6Q7H69QJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthWind/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos for environmental reporting.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to access your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.HealthWind;
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWind";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,9 +319,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
+				DEVELOPMENT_TEAM = JS6Q7H69QJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthWind/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos for environmental reporting.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to access your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -332,7 +336,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.HealthWind;
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWind";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

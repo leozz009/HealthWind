@@ -10,6 +10,7 @@ import Alamofire
 class AirQualityIndexViewModel: ObservableObject{
     
     @Published var airQualityData: AirQualityResponse?
+    @Published var loaded: Bool = false
     
     let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     
@@ -35,6 +36,7 @@ class AirQualityIndexViewModel: ObservableObject{
                 print("Respuesta recibida: \(value)")
                 DispatchQueue.main.async {
                     self.airQualityData = value
+                    self.loaded = true
                 }
             case .failure(let error):
                 // Manejo de error
