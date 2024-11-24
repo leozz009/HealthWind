@@ -26,7 +26,7 @@ struct MapView: View {
 }
 
 #Preview {
-    ContentView(selectedTab: 1)
+    ContentView(navigationModel: NavigationModel(), authViewModel: AuthViewModel())
 }
 
 

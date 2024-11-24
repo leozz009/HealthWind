@@ -8,12 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		1814907B2CC2C646001CF684 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		181578AF2CDC10F000E720DB /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 181578AE2CDC10F000E720DB /* BottomSheet */; };
-		181579202CDD190100E720DB /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1815791F2CDD190100E720DB /* OpenAI */; };
-		188F959C2CDC026900A5FBFA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 188F959B2CDC026900A5FBFA /* Alamofire */; };
+		359F10E92CF1069100131997 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 359F10E82CF1069100131997 /* Alamofire */; };
+		359F10EC2CF1075400131997 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 359F10EB2CF1075400131997 /* OpenAI */; };
+		359F10EF2CF1083000131997 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 359F10EE2CF1083000131997 /* BottomSheet */; };
+		359F10F22CF108A300131997 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 359F10F12CF108A300131997 /* Alamofire */; };
+		35D3F6A32CE2CAA80090C231 /* HealthWindAppIntents.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 35D3F69A2CE2CAA80090C231 /* HealthWindAppIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		35D3F6A12CE2CAA80090C231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A75227F22CB72DCB00785B13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35D3F6992CE2CAA80090C231;
+			remoteInfo = HealthWindAppIntents;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		35D3F6A82CE2CAA80090C231 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				35D3F6A32CE2CAA80090C231 /* HealthWindAppIntents.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35DD15DE2CF0ECBA00B1E230 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		359F10F82CF15A7000131997 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		359F10FA2CF15A7000131997 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		35D3F69A2CE2CAA80090C231 /* HealthWindAppIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = HealthWindAppIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75227FA2CB72DCB00785B13 /* HealthWind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -25,13 +64,59 @@
 			);
 			target = A75227F92CB72DCB00785B13 /* HealthWind */;
 		};
+		35D3F6A72CE2CAA80090C231 /* Exceptions for "HealthWindAppIntents" folder in "HealthWindAppIntents" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 35D3F6992CE2CAA80090C231 /* HealthWindAppIntents */;
+		};
+		35DD15FA2CF0F9C800B1E230 /* Exceptions for "HealthWind" folder in "HealthWindAppIntents" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/AirQualityResponse.swift,
+				ViewModels/Location/LocationViewModel.swift,
+				ViewModels/Menu/AirQualityIndexViewModel.swift,
+			);
+			target = 35D3F6992CE2CAA80090C231 /* HealthWindAppIntents */;
+		};
+		35DD15FC2CF0FA5200B1E230 /* Exceptions for "HealthWindAppIntents" folder in "HealthWind" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FetchAirQualityIntent.swift,
+				FetchDominantPollutantIntent.swift,
+				HealthWindShortcuts.swift,
+				OpenHealthWind.swift,
+			);
+			target = A75227F92CB72DCB00785B13 /* HealthWind */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		359F10FC2CF15A7000131997 /* WatchHealthWind */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WatchHealthWind;
+			sourceTree = "<group>";
+		};
+		359F11122CF2AE3200131997 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		35D3F69B2CE2CAA80090C231 /* HealthWindAppIntents */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				35DD15FC2CF0FA5200B1E230 /* Exceptions for "HealthWindAppIntents" folder in "HealthWind" target */,
+				35D3F6A72CE2CAA80090C231 /* Exceptions for "HealthWindAppIntents" folder in "HealthWindAppIntents" target */,
+			);
+			path = HealthWindAppIntents;
+			sourceTree = "<group>";
+		};
 		A75227FC2CB72DCB00785B13 /* HealthWind */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				188F959E2CDC031F00A5FBFA /* Exceptions for "HealthWind" folder in "HealthWind" target */,
+				35DD15FA2CF0F9C800B1E230 /* Exceptions for "HealthWind" folder in "HealthWindAppIntents" target */,
 			);
 			path = HealthWind;
 			sourceTree = "<group>";
@@ -39,24 +124,45 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		35D3F6972CE2CAA80090C231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359F10F22CF108A300131997 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75227F72CB72DCB00785B13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1814907B2CC2C646001CF684 /* (null) in Frameworks */,
-				181578AF2CDC10F000E720DB /* BottomSheet in Frameworks */,
-				181579202CDD190100E720DB /* OpenAI in Frameworks */,
-				188F959C2CDC026900A5FBFA /* Alamofire in Frameworks */,
+				359F10EF2CF1083000131997 /* BottomSheet in Frameworks */,
+				359F10EC2CF1075400131997 /* OpenAI in Frameworks */,
+				359F10E92CF1069100131997 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359F10F02CF108A300131997 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				359F10F82CF15A7000131997 /* WidgetKit.framework */,
+				359F10FA2CF15A7000131997 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A75227F12CB72DCB00785B13 = {
 			isa = PBXGroup;
 			children = (
+				359F11122CF2AE3200131997 /* Resources */,
 				A75227FC2CB72DCB00785B13 /* HealthWind */,
+				35D3F69B2CE2CAA80090C231 /* HealthWindAppIntents */,
+				359F10FC2CF15A7000131997 /* WatchHealthWind */,
+				359F10F02CF108A300131997 /* Frameworks */,
 				A75227FB2CB72DCB00785B13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A75227FA2CB72DCB00785B13 /* HealthWind.app */,
+				35D3F69A2CE2CAA80090C231 /* HealthWindAppIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +179,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		35D3F6992CE2CAA80090C231 /* HealthWindAppIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35D3F6A42CE2CAA80090C231 /* Build configuration list for PBXNativeTarget "HealthWindAppIntents" */;
+			buildPhases = (
+				35D3F6962CE2CAA80090C231 /* Sources */,
+				35D3F6972CE2CAA80090C231 /* Frameworks */,
+				35D3F6982CE2CAA80090C231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				35D3F69B2CE2CAA80090C231 /* HealthWindAppIntents */,
+			);
+			name = HealthWindAppIntents;
+			packageProductDependencies = (
+				359F10F12CF108A300131997 /* Alamofire */,
+			);
+			productName = HealthWindAppIntents;
+			productReference = 35D3F69A2CE2CAA80090C231 /* HealthWindAppIntents.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		A75227F92CB72DCB00785B13 /* HealthWind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75228082CB72DCC00785B13 /* Build configuration list for PBXNativeTarget "HealthWind" */;
@@ -79,19 +209,23 @@
 				A75227F62CB72DCB00785B13 /* Sources */,
 				A75227F72CB72DCB00785B13 /* Frameworks */,
 				A75227F82CB72DCB00785B13 /* Resources */,
+				35D3F6A82CE2CAA80090C231 /* Embed ExtensionKit Extensions */,
+				35DD15DE2CF0ECBA00B1E230 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				35D3F6A22CE2CAA80090C231 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				359F11122CF2AE3200131997 /* Resources */,
 				A75227FC2CB72DCB00785B13 /* HealthWind */,
 			);
 			name = HealthWind;
 			packageProductDependencies = (
-				188F959B2CDC026900A5FBFA /* Alamofire */,
-				181578AE2CDC10F000E720DB /* BottomSheet */,
-				1815791F2CDD190100E720DB /* OpenAI */,
+				359F10E82CF1069100131997 /* Alamofire */,
+				359F10EB2CF1075400131997 /* OpenAI */,
+				359F10EE2CF1083000131997 /* BottomSheet */,
 			);
 			productName = HealthWind;
 			productReference = A75227FA2CB72DCB00785B13 /* HealthWind.app */;
@@ -104,27 +238,31 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					35D3F6992CE2CAA80090C231 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					A75227F92CB72DCB00785B13 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
 			buildConfigurationList = A75227F52CB72DCB00785B13 /* Build configuration list for PBXProject "HealthWind" */;
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A75227F12CB72DCB00785B13;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */,
-				181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */,
-				1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */,
+				359F10E72CF1069100131997 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				359F10EA2CF1075400131997 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				359F10ED2CF1083000131997 /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A75227FB2CB72DCB00785B13 /* Products */;
@@ -132,11 +270,19 @@
 			projectRoot = "";
 			targets = (
 				A75227F92CB72DCB00785B13 /* HealthWind */,
+				35D3F6992CE2CAA80090C231 /* HealthWindAppIntents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		35D3F6982CE2CAA80090C231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75227F82CB72DCB00785B13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +293,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		35D3F6962CE2CAA80090C231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75227F62CB72DCB00785B13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,7 +309,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		35D3F6A22CE2CAA80090C231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35D3F6992CE2CAA80090C231 /* HealthWindAppIntents */;
+			targetProxy = 35D3F6A12CE2CAA80090C231 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		35D3F6A52CE2CAA80090C231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K94V6WA66;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWindAppIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthWindAppIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Necesitamos Siri para controlar la app HealthWind mediante comandos de voz y proporcionar información sobre la calidad del aire y otros servicios.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWindfa.AppIntents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35D3F6A62CE2CAA80090C231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K94V6WA66;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthWindAppIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthWindAppIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Necesitamos Siri para controlar la app HealthWind mediante comandos de voz y proporcionar información sobre la calidad del aire y otros servicios.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWindfa.AppIntents";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A75228062CB72DCC00785B13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,24 +503,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
-				DEVELOPMENT_TEAM = JS6Q7H69QJ;
+				DEVELOPMENT_TEAM = 2K94V6WA66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthWind/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos for environmental reporting.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to access your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to access your location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Se necesita acceso a tu ubicación en todo momento para funcionalidades avanzadas.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "La app necesita tu ubicación para ofrecer datos de calidad de aire basados en tu ubicación actual.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Se necesita acceso a tu ubicación para mostrar el índice de contaminación del aire.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWind";
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWindfa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,24 +538,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthWind/Preview Content\"";
-				DEVELOPMENT_TEAM = JS6Q7H69QJ;
+				DEVELOPMENT_TEAM = 2K94V6WA66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthWind/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take photos for environmental reporting.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to access your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to access your location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Se necesita acceso a tu ubicación en todo momento para funcionalidades avanzadas.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "La app necesita tu ubicación para ofrecer datos de calidad de aire basados en tu ubicación actual.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Se necesita acceso a tu ubicación para mostrar el índice de contaminación del aire.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWind";
+				PRODUCT_BUNDLE_IDENTIFIER = "-D6SN689HL.com.leonardo.HealthWindfa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -347,6 +568,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		35D3F6A42CE2CAA80090C231 /* Build configuration list for PBXNativeTarget "HealthWindAppIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35D3F6A52CE2CAA80090C231 /* Debug */,
+				35D3F6A62CE2CAA80090C231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A75227F52CB72DCB00785B13 /* Build configuration list for PBXProject "HealthWind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -368,23 +598,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.1;
-			};
-		};
-		1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
-		188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		359F10E72CF1069100131997 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -392,22 +606,43 @@
 				minimumVersion = 5.10.1;
 			};
 		};
+		359F10EA2CF1075400131997 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		359F10ED2CF1083000131997 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		181578AE2CDC10F000E720DB /* BottomSheet */ = {
+		359F10E82CF1069100131997 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */;
-			productName = BottomSheet;
+			package = 359F10E72CF1069100131997 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
-		1815791F2CDD190100E720DB /* OpenAI */ = {
+		359F10EB2CF1075400131997 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */;
+			package = 359F10EA2CF1075400131997 /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
 		};
-		188F959B2CDC026900A5FBFA /* Alamofire */ = {
+		359F10EE2CF1083000131997 /* BottomSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 359F10ED2CF1083000131997 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+		359F10F12CF108A300131997 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 359F10E72CF1069100131997 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

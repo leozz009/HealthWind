@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HealthWindApp: App {
+    @StateObject var mapParksViewModel = MapParksViewModel()
+    let appDependencies = AppDependencies.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(mapParksViewModel)
+                .environmentObject(appDependencies.airQualityViewModel)
         }
     }
 }

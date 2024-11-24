@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab: Int = 0
+    @StateObject var navigationModel = NavigationModel()
     @StateObject var authViewModel = AuthViewModel()  // Manejo del estado global de autenticación
     @State var HealthViewModel: HealthViewModel = .init()
     @State var locationViewModel: LocationViewModel = .init()
 
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $navigationModel.selectedTab) {
             MenuView()
                 .padding(.top, 50)
                 .tabItem {
@@ -17,6 +17,7 @@ struct ContentView: View {
                 .tag(0)
 
             MapView(locationViewModel: $locationViewModel)
+                .environmentObject(navigationModel)
                 .tabItem {
                     Image(systemName: "map")
                     Text("Mapa")
@@ -55,14 +56,14 @@ struct ContentView: View {
                 .tag(4)
             } else {
                 // Si no está autenticado, redirigir al login para Salud y Perfil
-                LoginView(selectedTab: $selectedTab)  // Pasamos el Binding
+                LoginView(selectedTab: $navigationModel.selectedTab)  // Pasamos el Binding
                     .tabItem {
                         Image(systemName: "heart")
                         Text("Salud")
                     }
                     .tag(3)
                 
-                LoginView(selectedTab: $selectedTab)
+                LoginView(selectedTab: $navigationModel.selectedTab)
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Perfil")
@@ -75,6 +76,7 @@ struct ContentView: View {
             locationViewModel.requestLocation()
         }
         .environmentObject(authViewModel)  // Inyecta el AuthViewModel en todas las vistas
+        .environmentObject(navigationModel)
     }
 }
 

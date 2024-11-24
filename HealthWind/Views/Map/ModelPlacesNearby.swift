@@ -11,7 +11,7 @@ import SwiftUI
 
 
 
-struct PlacesResponse: Codable {
+ struct PlacesResponse: Codable {
     let placesArray: [Place]
     
     enum CodingKeys : String, CodingKey {
@@ -19,35 +19,35 @@ struct PlacesResponse: Codable {
     }
 }
 
-struct LocationModel: Identifiable{
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-    let image: UIImage
-    let AQI: AQIIndex
+ struct LocationModel: Identifiable{
+    public let id = UUID()
+    public let name: String
+    public let coordinate: CLLocationCoordinate2D
+    public let image: UIImage
+    public let AQI: AQIIndex
 }
 
-struct Photo: Codable {
+ struct Photo: Codable {
     let heightPx: Int
     let name: String
     let widthPx: Int
 
 }
 
-struct Place: Codable, Identifiable {
-    let id: String
+ struct Place: Codable, Identifiable {
+    public let id: String
     let name: String
     let displayName: DisplayName
     let formattedAddress: String
     let location: Location
     let photos: [Photo]
 
-    struct DisplayName: Codable {
+     struct DisplayName: Codable {
         let text: String
         let languageCode: String
     }
 
-    struct Location: Codable {
+      struct Location: Codable {
         let latitude: Double
         let longitude: Double
     }

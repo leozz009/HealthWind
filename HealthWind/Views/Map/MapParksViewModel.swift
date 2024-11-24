@@ -9,14 +9,23 @@ import Foundation
 import Alamofire
 import CoreLocation
 import SwiftUI
+
+
 class MapParksViewModel: ObservableObject {
     
     @Published var places: [Place] = []
     @Published var isLoading: Bool = true
     @Published var locations: [LocationModel] = []
-    @Published var reponse: String?
+    @Published var response: String?
     
-    func fetchAirQualityIndex(place: Place) {
+    
+    
+    init() {
+        
+    }
+    
+
+func fetchAirQualityIndex(place: Place) {
         let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
         // Configura los parámetros
         let parameters: [String: Any] = [
@@ -38,10 +47,12 @@ class MapParksViewModel: ObservableObject {
                 // Manejo de respuesta exitosa
                 print("Respuesta recibida: \(value)")
                 DispatchQueue.main.async {
-                    let AQIIndex = value.indexes.last
-                    self.requestPhoto(name: place.photos[0].name, place: place, AQI: AQIIndex!)
+                    if let AQIIndex = value.indexes.last {
+                        self.response = "\(value)"
+                        self.requestPhoto(name: place.photos[0].name, place: place, AQI: AQIIndex)
+                    }
                 }
-            case .failure(let error):
+                case .failure(let error):
                 // Manejo de error
                 print("Error: \(error.localizedDescription)")
                 
@@ -54,7 +65,7 @@ class MapParksViewModel: ObservableObject {
     }
 
     
-    func request(latitude: Double, longitude: Double) {
+     func request(latitude: Double, longitude: Double) {
         let url = "https://places.googleapis.com/v1/places:searchNearby"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -92,7 +103,7 @@ class MapParksViewModel: ObservableObject {
         }
     }
     
-    func requestPhoto(name: String, place: Place, AQI: AQIIndex){
+     func requestPhoto(name: String, place: Place, AQI: AQIIndex){
         let url = "https://places.googleapis.com/v1/\(name)/media?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48&maxHeightPx=600&maxWidthPx=600"
 
         AF.request(url).responseData { response in

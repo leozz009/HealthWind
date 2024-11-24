@@ -8,13 +8,12 @@ import Foundation
 import Alamofire
 
 class AirQualityIndexViewModel: ObservableObject{
-    
     @Published var airQualityData: AirQualityResponse?
     @Published var loaded: Bool = false
     
     let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     
-    func fetchAirQualityIndex(latitude: Double, longitude: Double) {
+    func  fetchAirQualityIndex(latitude: Double, longitude: Double) {
         // Configura los parámetros
         let parameters: [String: Any] = [
             "location": [
