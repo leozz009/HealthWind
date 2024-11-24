@@ -21,7 +21,10 @@ struct HealthWindShortcuts: AppShortcutsProvider {
         
         AppShortcut(
             intent: FetchAirQualityIntent(),
-            phrases: ["Cómo esta la calidad del aire basado en HealthWind?"],
+            phrases: [
+                "Whats the air quality in HealthWind?",
+                "Tell me the air quality index with HealthWind"
+            ],
             shortTitle: "Calidad de aire",
             systemImageName: "wind"
         ),

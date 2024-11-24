@@ -14,7 +14,7 @@ struct FetchDominantPollutantIntent: AppIntent {
     static var description = IntentDescription("Obtiene el contaminante dominante.")
     
     @MainActor
-    func perform() async throws -> some IntentResult {
+    func perform() async throws -> some IntentResult & ProvidesDialog{
         // Crear una instancia del ViewModel de ubicación
         let locationVM = LocationViewModel()
         locationVM.requestLocation()
