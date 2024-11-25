@@ -140,6 +140,7 @@
 				359F10EF2CF1083000131997 /* BottomSheet in Frameworks */,
 				359F10EC2CF1075400131997 /* OpenAI in Frameworks */,
 				359F10E92CF1069100131997 /* Alamofire in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,14 +607,16 @@
 				minimumVersion = 5.10.1;
 			};
 		};
+
 		359F10EA2CF1075400131997 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.3.0;
 			};
 		};
+
 		359F10ED2CF1083000131997 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lucaszischka/BottomSheet.git";

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HealthWindApp: App {
@@ -17,5 +18,9 @@ struct HealthWindApp: App {
                 .environmentObject(mapParksViewModel)
                 .environmentObject(appDependencies.airQualityViewModel)
         }
+        .modelContainer(for: User.self)
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }

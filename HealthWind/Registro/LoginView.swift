@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct LoginView: View {
@@ -12,7 +13,6 @@ struct LoginView: View {
         NavigationView {  // Asegúrate de envolver en NavigationView
             ZStack {
                 BackgroundViewComponent()
-
                 VStack {
                     Spacer()
                     HStack {
@@ -71,7 +71,7 @@ struct LoginView: View {
                             .background(Color.blueApp)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                            .padding(.top, 8)
+                            .padding(.bottom, 8)
                     }
 
                     if !mensaje.isEmpty {
@@ -80,15 +80,9 @@ struct LoginView: View {
                             .padding(.top, 10)
                     }
 
-                    NavigationLink(destination: SignupView()) {  // Enlace para navegar a la vista de Signup
+                    NavigationLink(destination: SignupView()) {
                         Text("Crear cuenta")
-                            .bold()
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(.blueSecundaryApp)
-                            .cornerRadius(8)
-                            .padding(.top,8)
+                            .foregroundColor(.secondary)
                     }
 
                     Spacer()
