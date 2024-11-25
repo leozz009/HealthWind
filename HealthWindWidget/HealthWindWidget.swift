@@ -1,8 +1,8 @@
 //
-//  WatchHealthWind.swift
-//  WatchHealthWind
+//  HealthWindWidget.swift
+//  HealthWindWidget
 //
-//  Created by Fatima Alonso on 11/22/24.
+//  Created by Fatima Alonso on 11/24/24.
 //
 
 import WidgetKit
@@ -31,11 +31,6 @@ struct Provider: AppIntentTimelineProvider {
         return Timeline(entries: entries, policy: .atEnd)
     }
 
-    func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
-        // Create an array with all the preconfigured widgets to show.
-        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Example Widget")]
-    }
-
 //    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
 //        // Generate a list containing the contexts this widget is relevant in.
 //    }
@@ -46,29 +41,26 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
-struct WatchHealthWindEntryView : View {
+struct HealthWindWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
         VStack {
-            HStack {
-                Text("Time:")
-                Text(entry.date, style: .time)
-            }
-        
+            Text("Time:")
+            Text(entry.date, style: .time)
+
             Text("Favorite Emoji:")
             Text(entry.configuration.favoriteEmoji)
         }
     }
 }
 
-@main
-struct WatchHealthWind: Widget {
-    let kind: String = "WatchHealthWind"
+struct HealthWindWidget: Widget {
+    let kind: String = "HealthWindWidget"
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            WatchHealthWindEntryView(entry: entry)
+            HealthWindWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
     }
@@ -88,9 +80,9 @@ extension ConfigurationAppIntent {
     }
 }
 
-#Preview(as: .accessoryRectangular) {
-    WatchHealthWind()
+#Preview(as: .systemSmall) {
+    HealthWindWidget()
 } timeline: {
     SimpleEntry(date: .now, configuration: .smiley)
     SimpleEntry(date: .now, configuration: .starEyes)
-}    
+}

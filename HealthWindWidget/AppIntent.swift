@@ -1,8 +1,8 @@
 //
 //  AppIntent.swift
-//  WatchHealthWind
+//  HealthWindWidget
 //
-//  Created by Fatima Alonso on 11/22/24.
+//  Created by Fatima Alonso on 11/24/24.
 //
 
 import WidgetKit
