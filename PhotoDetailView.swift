@@ -8,6 +8,16 @@ struct PhotoDetailView: View {
     @State private var classificationResult: String?
     @State private var showingResultSheet = false
 
+    // Traducción para que se vea mejor
+    let labelTranslations: [String: String] = [
+        "a_Good": "Bueno",
+        "b_Moderate": "Moderado",
+        "c_Unhealthy_for_Sensitive_Groups": "Dañino para grupos sensibles",
+        "d_Unhealthy": "Dañino",
+        "e_Very_Unhealthy": "Muy dañino",
+        "f_Severe": "Severo"
+    ]
+
     var body: some View {
         VStack {
             if let cgImage = image.cgImage {
@@ -36,31 +46,38 @@ struct PhotoDetailView: View {
                         .padding()
                     
                     if let result = classificationResult {
-                        // Show classification result
-                        Text(result)
+                        // Mostrar resultado
+                        Text("El cielo parece ser \(result), revisa el apartado de salud para recomendaciones.")
                             .font(.body)
+                            .multilineTextAlignment(.center)
                             .padding()
+
+                        // Small disclaimer
+                        Text("La IA puede cometer errores, comprueba la información.")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.top, 10)
                         
-                        // Buttons displayed after classification is complete
+                        
                         HStack {
                             Button("Cerrar") {
                                 showingResultSheet = false
                             }
                             .padding()
                             
-                            Button("Detalles") {
-                                // Placeholder for "Detalles" action, currently does nothing
+                            Button("Publicar") {
+                                // No hace nada, Juntar con lo de Julieta
                             }
                             .padding()
                         }
                     } else {
-                        // Show "in process" message if classification is not yet completed
+                        
                         Text("Clasificación en proceso...")
                             .font(.body)
                             .padding()
                     }
                 }
-                .presentationDetents([.fraction(0.25)])
+                .presentationDetents([.fraction(0.3)])
             }
         }
         .navigationTitle("Detalles de la Foto")
@@ -68,42 +85,43 @@ struct PhotoDetailView: View {
     }
 
     func classifyImage() {
-        // Display the sheet immediately to show the "in process" message
+        
         self.classificationResult = nil
         self.showingResultSheet = true
 
-        // Load the CoreML model with a configuration
+        
         let modelConfiguration = MLModelConfiguration()
         guard let coreMLModel = try? AirPollutionClassifier1(configuration: modelConfiguration).model else {
             print("Failed to load model")
             return
         }
         
-        // Ensure the CoreML model is loaded into Vision
+    
         guard let visionModel = try? VNCoreMLModel(for: coreMLModel) else {
             print("Failed to create VNCoreMLModel")
             return
         }
         
-        // Create a Vision request for image classification
+        
         let request = VNCoreMLRequest(model: visionModel) { (request, error) in
             if let results = request.results as? [VNClassificationObservation], let topResult = results.first {
                 DispatchQueue.main.async {
-                    // Update the classification result to show in the UI
-                    self.classificationResult = topResult.identifier
+                    
+                    let translatedLabel = self.labelTranslations[topResult.identifier] ?? "Desconocido"
+                    self.classificationResult = translatedLabel
                 }
             } else if let error = error {
                 print("Error during classification: \(error)")
             }
         }
         
-        // Convert the UIImage to a CGImage
+        
         guard let cgImage = image.cgImage else {
             print("Failed to convert UIImage to CGImage")
             return
         }
         
-        // Perform the request on a background queue
+        
         DispatchQueue.global(qos: .userInitiated).async {
             let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
             do {
