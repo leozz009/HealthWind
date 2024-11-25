@@ -10,6 +10,7 @@ import Alamofire
 
 class AirQualitySheetViewModel: ObservableObject {
     @Published var airQualityCompleteInformation: AirQualityData?
+    @Published var loaded: Bool = false
     
     let url = "https://airquality.googleapis.com/v1/currentConditions:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     
@@ -44,6 +45,7 @@ class AirQualitySheetViewModel: ObservableObject {
                 print("Respuesta recibida: \(value)")
                 DispatchQueue.main.async {
                     self.airQualityCompleteInformation = value
+                    self.loaded = true
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")

@@ -70,8 +70,9 @@ struct MenuView: View {
                         VStack(alignment:.trailing){
                             Text("Índice de calidad: \(airQualityIndex.airQualityData?.indexes.first?.aqi ?? 0)")
                                 .padding(.all,5)
-                                .background(.greenIndexMenuView)
+                                .background(airQualityIndex.airQualityData?.indexes.first?.color.swiftUIColor ?? .gray)
                                 .cornerRadius(8)
+                                .opacity(0.5)
                             Text(getWordUppercase(text: airQualityIndex.airQualityData?.indexes.first?.dominantPollutant ?? ""))
                                 .foregroundColor(.white)
                                 .padding(.all,5)
@@ -152,9 +153,20 @@ struct MenuView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             // Llama a la función para obtener los datos de la calidad del aire
-            airQualityIndex.fetchAirQualityIndex(latitude: 25.6866, longitude: -100.3161)
-            forecast.fetchAirQualityIndexForNextDays(latitude: 25.6866, longitude: -100.3161)
-            airPolutionDetails.fetchAirQualityData(latitude: 25.6866, longitude: -100.3161)
+            if(!airQualityIndex.loaded){
+                airQualityIndex.fetchAirQualityIndex(latitude: 25.6866, longitude: -100.3161)
+            }
+                
+            
+            if(!airPolutionDetails.loaded){
+                airPolutionDetails.fetchAirQualityData(latitude: 25.6866, longitude: -100.3161)
+            }
+            if(!forecast.loaded){
+                forecast.fetchAirQualityIndexForNextDays(latitude: 25.6866, longitude: -100.3161)
+            }
+            
+            
+            
         }
     }
     

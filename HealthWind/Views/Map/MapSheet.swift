@@ -10,30 +10,29 @@ import SwiftUI
 
 public struct MapSheet: View {
     @Binding var location: LocationModel
+
     public var body: some View {
 
         
-        if(location.name != "") {
+        if(location.name != "" ) {
             HStack {
                 ZStack {
                     Circle()
-                        .frame(width: 160, height: 160)
+                        .frame(width: 150, height: 150)
                         .foregroundColor(location.AQI.color.swiftUIColor)
                     
                     Image(uiImage: location.image)
                         .resizable()
-                        .frame(width: 150, height: 150)
+                        .frame(width: 140, height: 140)
                         .scaledToFill()
                         .clipShape(Circle())
-                }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+                }.padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
                 VStack(alignment: .leading) {
                     Text("Calidad del aire")
                         .foregroundColor(.secondary)
                     Text(getLastWordWithCapitalization(text: location.AQI.category))
                         .font(.system(size:30))
                         .foregroundStyle(location.AQI.color.swiftUIColor)
-                    
-                    
                 }
                Spacer()
             }

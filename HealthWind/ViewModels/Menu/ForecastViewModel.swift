@@ -9,6 +9,7 @@ import Alamofire
 
 class ForecastViewModel: ObservableObject {
     @Published var forecastDataList: [DailyForecast] = []
+    @Published var loaded: Bool = false
     
     let url = "https://airquality.googleapis.com/v1/forecast:lookup?key=AIzaSyAu3h_58ZnWB0cHsge_qw69VRGt6tXsG48"
     func fetchAirQualityIndexForNextDays(latitude: Double, longitude: Double, daysCount: Int = 4) {
@@ -56,6 +57,7 @@ class ForecastViewModel: ObservableObject {
                         if let dailyForecast = weatherForecast.hourlyForecasts.first {
                             self.forecastDataList.append(dailyForecast)
                         }
+                        self.loaded = true
                     }
                 case .failure(let error):
                     print("Error al obtener datos de calidad de aire: \(error.localizedDescription)")
