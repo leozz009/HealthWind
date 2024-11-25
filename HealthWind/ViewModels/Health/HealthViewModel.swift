@@ -11,6 +11,7 @@ import OpenAI
 
 @Observable
 class HealthViewModel: ObservableObject {
+
     let openAI = OpenAI(apiToken: "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")
     var result: String = ""
     var recommendations: [String] = []
@@ -36,8 +37,14 @@ class HealthViewModel: ObservableObject {
                         }
                     case .failure(let failure):
                         print(failure)
+
                     }
+                    
                 }
-        self.loadedRecommendationes = true
+            case .failure(let failure):
+                print(failure)
+            }
         }
+        self.loadedRecommendationes = true
+    }
 }

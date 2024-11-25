@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1814907B2CC2C646001CF684 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		181578AF2CDC10F000E720DB /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 181578AE2CDC10F000E720DB /* BottomSheet */; };
-		181579202CDD190100E720DB /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1815791F2CDD190100E720DB /* OpenAI */; };
-		188F959C2CDC026900A5FBFA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 188F959B2CDC026900A5FBFA /* Alamofire */; };
+		A781C3ED2CEE68A30048C86E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A781C3EC2CEE68A30048C86E /* Alamofire */; };
+		A781C3F02CEE68AE0048C86E /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = A781C3EF2CEE68AE0048C86E /* OpenAI */; };
+		A781C3F32CEE68B60048C86E /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = A781C3F22CEE68B60048C86E /* BottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1814907B2CC2C646001CF684 /* (null) in Frameworks */,
-				181578AF2CDC10F000E720DB /* BottomSheet in Frameworks */,
-				181579202CDD190100E720DB /* OpenAI in Frameworks */,
-				188F959C2CDC026900A5FBFA /* Alamofire in Frameworks */,
+				A781C3F32CEE68B60048C86E /* BottomSheet in Frameworks */,
+				A781C3F02CEE68AE0048C86E /* OpenAI in Frameworks */,
+				A781C3ED2CEE68A30048C86E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,9 +89,9 @@
 			);
 			name = HealthWind;
 			packageProductDependencies = (
-				188F959B2CDC026900A5FBFA /* Alamofire */,
-				181578AE2CDC10F000E720DB /* BottomSheet */,
-				1815791F2CDD190100E720DB /* OpenAI */,
+				A781C3EC2CEE68A30048C86E /* Alamofire */,
+				A781C3EF2CEE68AE0048C86E /* OpenAI */,
+				A781C3F22CEE68B60048C86E /* BottomSheet */,
 			);
 			productName = HealthWind;
 			productReference = A75227FA2CB72DCB00785B13 /* HealthWind.app */;
@@ -122,9 +122,9 @@
 			mainGroup = A75227F12CB72DCB00785B13;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */,
-				181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */,
-				1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */,
+				A781C3EB2CEE68A30048C86E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A781C3EE2CEE68AE0048C86E /* XCRemoteSwiftPackageReference "OpenAI" */,
+				A781C3F12CEE68B60048C86E /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A75227FB2CB72DCB00785B13 /* Products */;
@@ -368,23 +368,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.1;
-			};
-		};
-		1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
-		188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		A781C3EB2CEE68A30048C86E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -392,23 +376,39 @@
 				minimumVersion = 5.10.1;
 			};
 		};
+		A781C3EE2CEE68AE0048C86E /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		A781C3F12CEE68B60048C86E /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		181578AE2CDC10F000E720DB /* BottomSheet */ = {
+		A781C3EC2CEE68A30048C86E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 181578AD2CDC10F000E720DB /* XCRemoteSwiftPackageReference "BottomSheet" */;
-			productName = BottomSheet;
+			package = A781C3EB2CEE68A30048C86E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
-		1815791F2CDD190100E720DB /* OpenAI */ = {
+		A781C3EF2CEE68AE0048C86E /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1815791E2CDD190100E720DB /* XCRemoteSwiftPackageReference "OpenAI" */;
+			package = A781C3EE2CEE68AE0048C86E /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
 		};
-		188F959B2CDC026900A5FBFA /* Alamofire */ = {
+		A781C3F22CEE68B60048C86E /* BottomSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 188F959A2CDC026900A5FBFA /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = A781C3F12CEE68B60048C86E /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
