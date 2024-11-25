@@ -40,7 +40,7 @@ struct SignupView: View {
                         Image(uiImage: selectedImage)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 150, height: 150)
+                            .frame(width: 170, height: 170)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.blueApp, lineWidth: 6))
                             .shadow(radius: 6)
@@ -51,7 +51,7 @@ struct SignupView: View {
                             Image(systemName: "person.crop.circle.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 150, height: 150)
+                                .frame(width: 170, height: 170)
                                 .clipShape(Circle())
                                 
                                 .foregroundStyle(.grayPhoto)

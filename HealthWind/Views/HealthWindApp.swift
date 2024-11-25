@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HealthWindApp: App {
@@ -13,5 +14,9 @@ struct HealthWindApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: User.self)
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
