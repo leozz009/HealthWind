@@ -93,16 +93,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		359F10FC2CF15A7000131997 /* WatchHealthWind */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WatchHealthWind;
-			sourceTree = "<group>";
-		};
-		359F11122CF2AE3200131997 /* Resources */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		35D3F69B2CE2CAA80090C231 /* HealthWindAppIntents */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -140,7 +130,6 @@
 				359F10EF2CF1083000131997 /* BottomSheet in Frameworks */,
 				359F10EC2CF1075400131997 /* OpenAI in Frameworks */,
 				359F10E92CF1069100131997 /* Alamofire in Frameworks */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,10 +148,8 @@
 		A75227F12CB72DCB00785B13 = {
 			isa = PBXGroup;
 			children = (
-				359F11122CF2AE3200131997 /* Resources */,
 				A75227FC2CB72DCB00785B13 /* HealthWind */,
 				35D3F69B2CE2CAA80090C231 /* HealthWindAppIntents */,
-				359F10FC2CF15A7000131997 /* WatchHealthWind */,
 				359F10F02CF108A300131997 /* Frameworks */,
 				A75227FB2CB72DCB00785B13 /* Products */,
 			);
@@ -219,7 +206,6 @@
 				35D3F6A22CE2CAA80090C231 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				359F11122CF2AE3200131997 /* Resources */,
 				A75227FC2CB72DCB00785B13 /* HealthWind */,
 			);
 			name = HealthWind;
@@ -607,7 +593,6 @@
 				minimumVersion = 5.10.1;
 			};
 		};
-
 		359F10EA2CF1075400131997 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MacPaw/OpenAI";
@@ -616,7 +601,6 @@
 				minimumVersion = 0.3.0;
 			};
 		};
-
 		359F10ED2CF1083000131997 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lucaszischka/BottomSheet.git";

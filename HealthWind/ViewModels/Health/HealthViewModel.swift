@@ -40,10 +40,7 @@ class HealthViewModel: ObservableObject {
 
                     }
                     
-                }
-            case .failure(let failure):
-                print(failure)
-            }
+    
         }
         self.loadedRecommendationes = true
     }
