@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 // Modelo principal para la respuesta
-struct AirQualityResponse: Decodable {
+public struct AirQualityResponse: Decodable {
     let dateTime: String
     let regionCode: String
-    let indexes: [AQIIndex]
+    public let indexes: [AQIIndex]
 }
 
 // Modelo para los índices de calidad del aire
-struct AQIIndex: Codable {
+public struct AQIIndex: Codable {
     let code: String
     let displayName: String
     let aqi: Int
@@ -27,7 +27,7 @@ struct AQIIndex: Codable {
 }
 
 // Modelo para el color asociado al índice AQI
-struct AQIColor: Codable {
+public struct AQIColor: Codable {
     let red: Double?
     let green: Double?
     let blue: Double?
@@ -38,7 +38,7 @@ struct AQIColor: Codable {
 }
 
 // Ejemplo de decodificación del JSON
-func decodeAirQualityResponse(from jsonData: Data) throws -> AirQualityResponse {
+public func decodeAirQualityResponse(from jsonData: Data) throws -> AirQualityResponse {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .iso8601 // Configuración para fechas en formato ISO 8601
     return try decoder.decode(AirQualityResponse.self, from: jsonData)

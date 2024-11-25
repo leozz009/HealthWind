@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import CoreLocation
 import SwiftUI
 
 public struct MapSheet: View {
     @Binding var location: LocationModel
-
     public var body: some View {
 
         
@@ -44,5 +44,9 @@ public struct MapSheet: View {
 
 
 #Preview {
-    ContentView(selectedTab: 1)
-}
+    ContentView(navigationModel: NavigationModel(), authViewModel: AuthViewModel())
+
+    }
+    
+  
+

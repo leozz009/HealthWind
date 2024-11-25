@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @State private var showingSheet = false
-    @StateObject private var airQualityIndex = AirQualityIndexViewModel()
+    @State private var airQualityIndex = AirQualityIndexViewModel()
     @StateObject private var forecast = ForecastViewModel()
     @StateObject private var airPolutionDetails = AirQualitySheetViewModel()
     
